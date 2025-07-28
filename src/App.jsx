@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from 'react';
+
+import * as THREE from 'three';
+// import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
+// import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
+// import { VOXLoader } from 'three/examples/jsm/loaders/VOXLoader';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import './App.css';
+import SceneInit from './lib/SceneInit';
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    const test = new SceneInit('myThreeJsCanvas');
+    test.initialize();
+    test.animate();
+
+    // const boxGeometry = new THREE.BoxGeometry(8, 8, 8);
+    // const boxMaterial = new THREE.MeshNormalMaterial();
+    // const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
+    // test.scene.add(boxMesh);
+
+    let loadedModel;
+    const glftLoader = new GLTFLoader();
+    glftLoader.load('./src/assets/wrapped_flower_bouquet/scene.gltf', (gltfScene) => {
+      loadedModel = gltfScene;
+      // console.log(loadedModel);
+      gltfScene.scene.position.y = 3.5;
+      gltfScene.scene.scale.set(10, 10, 10);
+      test.scene.add(gltfScene.scene);
+    });
+
+    // const animate = () => {
+    //   if (loadedModel) {
+    //     loadedModel.scene.rotation.x += 0.01;
+    //     loadedModel.scene.rotation.y += 0.01;
+    //     loadedModel.scene.rotation.z += 0.01;
+    //   }
+    //   requestAnimationFrame(animate);
+    // };
+    // animate();
+
+    test.animate();
+
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <canvas id="myThreeJsCanvas" />
+    </div>
+  );
 }
 
-export default App
+export default App;
