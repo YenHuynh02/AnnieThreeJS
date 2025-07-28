@@ -42,6 +42,7 @@ export default function App() {
     const handlePlay = () => {
       const audio = audioRef.current;
       if (audio) {
+        audio.load(); // iOS buffering
         const savedTime = localStorage.getItem('audioTime');
         if (savedTime) {
           audio.currentTime = parseFloat(savedTime);
@@ -80,10 +81,6 @@ export default function App() {
       gltfScene.scene.scale.set(10, 10, 10);
       test.scene.add(gltfScene.scene);
       setLoading(false);
-
-      if (audioRef.current) {
-        audioRef.current.play();
-      }
     });
 
 
@@ -104,7 +101,7 @@ export default function App() {
     <div>
       <audio
         ref={audioRef}
-        src='/mylight.mp3'
+        src='/mylight.m4a'
         autoPlay
         style={{ display: 'none' }}
         loop
