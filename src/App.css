@@ -180,7 +180,7 @@ canvas {
   z-index: 9999;
   color: #ffffff;
   font-size: 1.5rem;
-  background: transparent;
+  background: red;
   width: 0;
 }
 
@@ -210,7 +210,7 @@ canvas {
 @media screen and (max-width: 600px) {
   .info {
     position: absolute;
-    bottom: 0;
+    bottom: -25%;
     left: 5px;
   }
 }
