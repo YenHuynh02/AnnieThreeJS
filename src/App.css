@@ -2,7 +2,6 @@
   font-family: monospace;
 }
 
-/* Responsible */
 html,
 body {
   margin: 0;
@@ -205,4 +204,13 @@ canvas {
 
 #musicText p:nth-child(1) {
   color: rgb(105, 103, 103);
+}
+
+/*Responsible*/
+@media screen and (max-width: 600px) {
+  .info {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+  }
 }
