@@ -21,7 +21,7 @@ function App() {
 
     let loadedModel;
     const glftLoader = new GLTFLoader();
-    glftLoader.load('./src/assets/wrapped_flower_bouquet/scene.gltf', (gltfScene) => {
+    glftLoader.load('/assets/wrapped_flower_bouquet/scene.gltf', (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.position.y = 3.5;
