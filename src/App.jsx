@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import * as THREE from 'three';
 // import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
@@ -8,7 +8,9 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import './App.css';
 import SceneInit from './lib/SceneInit';
 
-function App() {
+export default function App() {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const test = new SceneInit('myThreeJsCanvas');
     test.initialize();
@@ -19,15 +21,17 @@ function App() {
     // const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
     // test.scene.add(boxMesh);
 
-    let loadedModel;
+    // let loadedModel;
     const glftLoader = new GLTFLoader();
     glftLoader.load('/assets/wrapped_flower_bouquet/scene.gltf', (gltfScene) => {
-      loadedModel = gltfScene;
+      // loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.position.y = 3.5;
       gltfScene.scene.scale.set(10, 10, 10);
       test.scene.add(gltfScene.scene);
+      setLoading(false);
     });
+
 
     // const animate = () => {
     //   if (loadedModel) {
@@ -45,9 +49,24 @@ function App() {
 
   return (
     <div>
+      {loading &&
+        <div className="loading">
+          <img src='/hi.gif'></img>
+        </div>
+      }
+
+      <div className='info'>
+        <h2>Happy Birthday Annie💐</h2>
+      </div>
+
+      <div className='musicBox'>
+        <img src='/musicImg.jpeg' alt='Music Icon' />
+        <div id='musicText'>
+          <p>Now playing <i class="fa-solid fa-chart-simple fa-fade"></i></p>
+          <p>my light (我的光)</p>
+        </div>
+      </div>
       <canvas id="myThreeJsCanvas" />
     </div>
   );
 }
-
-export default App;
