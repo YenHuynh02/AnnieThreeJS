@@ -55,8 +55,8 @@ export default class SceneInit {
         this.controls.enablePan = false; // Allow drag around
         this.controls.enableDamping = true; // Enable damping (inertia)
         this.controls.dampingFactor = 0.05; // Rotate slower
-        this.stats = Stats();
-        document.body.appendChild(this.stats.dom);
+        // this.stats = Stats();
+        // document.body.appendChild(this.stats.dom);
 
         // ambient light which is for the whole scene
         this.ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
@@ -89,7 +89,7 @@ export default class SceneInit {
         // requestAnimationFrame(this.animate.bind(this));
         window.requestAnimationFrame(this.animate.bind(this));
         this.render();
-        this.stats.update();
+        // this.stats.update();
         this.controls.update();
     }
 
