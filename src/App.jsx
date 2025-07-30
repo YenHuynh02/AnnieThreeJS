@@ -99,6 +99,12 @@ export default function App() {
 
   return (
     <div>
+      <div className='openLetter'>
+        <div>
+          <p>text</p>
+        </div>
+      </div>
+      
       <audio
         ref={audioRef}
         src='/mylight.m4a'
