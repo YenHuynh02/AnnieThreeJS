@@ -1,7 +1,7 @@
 # Gift for Ann (3D Render Test)
 
-### Notes:
-Download package `ffmpeg` in Ubuntu to convert audio file.
+> **Note** <br>
+> Download package `ffmpeg` in Ubuntu to convert audio file.
 
 ```wsl
 sudo apt update
