@@ -99,12 +99,22 @@ export default function App() {
 
   return (
     <div>
-      <div className='openLetter'>
-        <div>
-          <p>text</p>
+      <div className='background'>
+        <div className='openLetter'>
+          <div id='section1'>
+            <h2>Take Care Notes</h2>
+            <p>Are u tired?</p>
+            <p>Have u sleep well?</p>
+            <p>Have u eaten well today?</p>
+          </div>
+          <div id='section1'>
+            <p>I may not be around all the time but remembering
+              to treat urself kindly, sleep enough, eat enough, cuz I don't want to see u sick bro 🥹</p>
+            <p>Pinky promise?</p>
+          </div>
         </div>
       </div>
-      
+
       <audio
         ref={audioRef}
         src='/mylight.m4a'
