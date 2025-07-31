@@ -231,7 +231,7 @@ canvas {
   display: flex;
   position: absolute;
   left: 50%;
-  top: 5%;
+  top: 10%;
   width: 250px;
   align-items: center;
   justify-content: space-evenly;
@@ -251,6 +251,7 @@ canvas {
 
 /*Responsible*/
 @media screen and (max-width: 600px) {
+
   .info {
     position: absolute;
     bottom: -25%;
