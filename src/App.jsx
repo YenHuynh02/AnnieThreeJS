@@ -10,7 +10,20 @@ import SceneInit from './lib/SceneInit';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
+  const [buttonClicked, setButtonClicked] = useState(false);
   const audioRef = useRef(null);
+
+  // Handle button click
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    setButtonClicked(true);
+    const audio = audioRef.current;
+    if (audio) {
+      audio.play().catch((err) => {
+        console.warn('Playback blocked:', err);
+      });
+    }
+  };
 
   // Restore audio time and save every second
   useEffect(() => {
@@ -99,41 +112,42 @@ export default function App() {
 
   return (
     <div>
-      <div className='background'>
-        <div className='openLetter'>
-          <h2 style={{ textAlign: 'center' }}>Take Care Notes</h2>
-          <div id='section1'>
-            <p>How are u?</p>
-            <p>Are u tired?</p>
-            <p>Have u sleep well?</p>
-            <p>Have u eaten well these days?</p>
+      {!buttonClicked && (
+        <div className='background'>
+          <div className='openLetter'>
+            <h2 style={{ textAlign: 'center' }}>Take Care Notes</h2>
+            <div id='section1'>
+              <p>How are u?</p>
+              <p>Are u tired?</p>
+              <p>Have u sleep well?</p>
+              <p>Have u eaten well these days?</p>
+            </div>
+            <div id='section2'>
+              <p>NieNie</p>
+              <p>I may not be around all the time but remembering
+                to treat urself kindly, sleep enough, eat enough, cuz I don't want to see u sick bro 🥹</p>
+              <p>Pinky promise?</p>
+            </div>
+            <button
+              style={{
+                clear: 'both',
+                width: '30%',
+                margin: '380px auto 0 auto',
+                display: 'block',
+                padding: '10px',
+                borderRadius: '5px',
+                backgroundColor: '#52af55ff',
+                color: 'white',
+                border: 'none'
+              }}
+              type='submit'
+              onClick={handleButtonClick}
+            >
+              Oke <i class="fa-regular fa-heart fa-bounce"></i>
+            </button>
           </div>
-          <div id='section2'>
-            <p>NieNie</p>
-            <p>I may not be around all the time but remembering
-              to treat urself kindly, sleep enough, eat enough, cuz I don't want to see u sick bro 🥹</p>
-            <p>Pinky promise?</p>
-          </div>
-          <button
-            style={{
-              clear: 'both', 
-              width: '30%',
-              margin: '380px auto 0 auto', 
-              display: 'block', 
-              padding: '10px', 
-              borderRadius: '5px', 
-              backgroundColor: '#52af55ff', 
-              color: 'white', 
-              border: 'none' 
-            }}
-            type='submit'
-            onClick={(e => {e.preventDefault();})}
-          >
-            Oke <i class="fa-regular fa-heart fa-bounce"></i>
-          </button>
         </div>
-      </div>
-
+      )}
       <audio
         ref={audioRef}
         src='/mylight.m4a'
