@@ -101,17 +101,36 @@ export default function App() {
     <div>
       <div className='background'>
         <div className='openLetter'>
+          <h2 style={{ textAlign: 'center' }}>Take Care Notes</h2>
           <div id='section1'>
-            <h2>Take Care Notes</h2>
+            <p>How are u?</p>
             <p>Are u tired?</p>
             <p>Have u sleep well?</p>
-            <p>Have u eaten well today?</p>
+            <p>Have u eaten well these days?</p>
           </div>
-          <div id='section1'>
+          <div id='section2'>
+            <p>NieNie</p>
             <p>I may not be around all the time but remembering
               to treat urself kindly, sleep enough, eat enough, cuz I don't want to see u sick bro 🥹</p>
             <p>Pinky promise?</p>
           </div>
+          <button
+            style={{
+              clear: 'both', 
+              width: '30%',
+              margin: '380px auto 0 auto', 
+              display: 'block', 
+              padding: '10px', 
+              borderRadius: '5px', 
+              backgroundColor: '#52af55ff', 
+              color: 'white', 
+              border: 'none' 
+            }}
+            type='submit'
+            onClick={(e => {e.preventDefault();})}
+          >
+            Oke <i class="fa-regular fa-heart fa-bounce"></i>
+          </button>
         </div>
       </div>
 
