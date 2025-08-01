@@ -125,7 +125,7 @@ export default function App() {
             <div id='section2'>
               <p>NieNie</p>
               <p>I may not be around all the time but remembering
-                to treat urself kindly, sleep enough, eat enough, cuz I don't want to see u sick bro 🥹</p>
+                to treat urself kindly, sleep enough, eat enough, cuz I don't want to see u sick tho 🥹</p>
               <p>Pinky promise?</p>
             </div>
             <button
@@ -143,7 +143,7 @@ export default function App() {
               type='submit'
               onClick={handleButtonClick}
             >
-              Oke <i class="fa-regular fa-heart fa-bounce"></i>
+              Oke <i className="fa-regular fa-heart fa-bounce"></i>
             </button>
           </div>
         </div>
@@ -177,6 +177,13 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      <div className='message'>
+        <button>
+          <i className="fa-regular fa-message fa-beat fa-xl" style={{color: '#63E62E'}}></i>
+        </button>
+      </div>
+
       <canvas id="myThreeJsCanvas" />
     </div>
   );
