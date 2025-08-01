@@ -331,6 +331,10 @@ canvas {
   .message {
     right: 0;
   }
+  
+  .chatboxHeader {
+    top: 40%;
+  }
 
   .chatboxHeader div div{
     align-items: center; /*justify-content: center if we use flex-direction: column*/
