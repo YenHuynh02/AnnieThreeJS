@@ -312,6 +312,10 @@ canvas {
 
 /*Responsible*/
 @media screen and (max-width: 600px) {
+  .loading img {
+    width: 200px;;
+  }
+  
   .openLetter {
     display: flex;
     flex-direction: column;
