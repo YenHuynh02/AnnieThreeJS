@@ -197,7 +197,7 @@ export default function App() {
       <div className={`chatbox ${visible ? 'visible' : ''}`}>
         <div className='chatboxHeader'>
           <div> {/*Wrap around content so can use flex display to center the content */}
-            <h2 style={{ textAlign: 'center' }}>Thui thì ăn sinh nhật trễ ha</h2>
+            <h2 style={{ textAlign: 'center' }}>Thui thì hai đứa mình ăn sinh nhật trễ ha</h2>
             <div
               style={{
                 display: 'flex',
