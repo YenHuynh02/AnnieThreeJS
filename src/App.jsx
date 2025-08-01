@@ -239,9 +239,9 @@ export default function App() {
               </div>
             </div>
 
-            <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '15px' }}>
+            <h2 style={{ textAlign: 'center', marginTop: '20px' }}>
               Cho anh gửi lời hỏi thăm hai bác, em nhé!
-            </p>
+            </h2>
 
             <button
               style={{
