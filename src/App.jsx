@@ -11,6 +11,7 @@ import SceneInit from './lib/SceneInit';
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [visible, setVisible] = useState(false);
   const audioRef = useRef(null);
 
   // Handle button click
@@ -23,6 +24,12 @@ export default function App() {
         console.warn('Playback blocked:', err);
       });
     }
+  };
+
+  // Handle chatbox visibility
+  const handleChatboxClick = (e) => {
+    e.preventDefault();
+    setVisible(!visible);
   };
 
   // Restore audio time and save every second
@@ -179,13 +186,15 @@ export default function App() {
       </div>
 
       <div className='message'>
-        <button>
+        <button
+          onClick={handleChatboxClick}
+        >
           <i className="fa-regular fa-message fa-beat fa-xl" style={{ color: '#63E62E' }}></i>
           <p>1</p>
         </button>
       </div>
 
-      <div className='chatbox'>
+      <div className={`chatbox ${visible ? 'visible' : ''}`}>
         <div className='chatboxHeader'>
           <div> {/*Wrap around content so can use flex display to center the content */}
             <h2 style={{ textAlign: 'center' }}>Thui thì ăn sinh nhật trễ ha</h2>
@@ -244,6 +253,8 @@ export default function App() {
                 color: 'white',
                 border: 'none'
               }}
+              type='submit'
+              onClick={handleChatboxClick}
             >
               Oke <i className="fa-regular fa-heart fa-bounce"></i>
             </button>
