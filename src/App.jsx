@@ -180,8 +180,75 @@ export default function App() {
 
       <div className='message'>
         <button>
-          <i className="fa-regular fa-message fa-beat fa-xl" style={{color: '#63E62E'}}></i>
+          <i className="fa-regular fa-message fa-beat fa-xl" style={{ color: '#63E62E' }}></i>
+          <p>1</p>
         </button>
+      </div>
+
+      <div className='chatbox'>
+        <div className='chatboxHeader'>
+          <div> {/*Wrap around content so can use flex display to center the content */}
+            <h2 style={{ textAlign: 'center' }}>Thui thì ăn sinh nhật trễ ha</h2>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
+              <img
+                style={{
+                  height: '200px',
+                }}
+                src='/birthday-cake.gif'
+              >
+              </img>
+              <div
+                style={{
+                  position: 'relative'
+                }}
+              >
+                <img
+                  style={{
+                    height: '200px',
+                    borderRadius: '50px',
+                    border: '1px solid white'
+                  }}
+                  src='/bts.jpg'
+                >
+                </img>
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: '-25px',
+                    right: '-20px',
+                    fontSize: '50px',
+                    rotate: '20deg',
+                  }}
+                >
+                  🎀
+                </span>
+              </div>
+            </div>
+
+            <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '15px' }}>
+              Cho anh gửi lời hỏi thăm hai bác, em nhé!
+            </p>
+
+            <button
+              style={{
+                display: 'block',
+                margin: '0 auto',
+                padding: '10px 20px',
+                borderRadius: '5px',
+                backgroundColor: '#52af55ff',
+                color: 'white',
+                border: 'none'
+              }}
+            >
+              Oke <i className="fa-regular fa-heart fa-bounce"></i>
+            </button>
+          </div>
+        </div>
       </div>
 
       <canvas id="myThreeJsCanvas" />
